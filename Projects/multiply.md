@@ -12,11 +12,11 @@ Instructions
 |`LDA`|Load accumalator w/ counter| 3A|
 |(address)|Least Significant| 40|
 |(address)|Most Significant| 00|
-|`MOV (A-->C)`|Move the "counter" to C|79|
+|`MOV (A-->C)`|Move the "counter" to C|4F|
 |`MVI (A)`|Reset Register A to 0|3E|
 |`MVI (A)`|Reset Register A to 0|0E|
 |`ADD (B + A)`|Add B + A|80|
-|`DCR (C)`|Decrement the counter|0C|
+|`DCR (C)`|Decrement the counter|0D|
 |`JNZ`|Jump if not 0 back to the addition of B + A |C2|
 |(address)|Go back to 09 which is A + B, low sig|09|
 |(address)|Go back to 09 which is A + B, high sig|00|
