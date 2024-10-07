@@ -15,8 +15,8 @@
 * You can find files where you have the rough name known:
     * Say if you were looking for Command file where you knew the first couple of characters. You could use:
 
-    * DIR LIFE????.COM
-    * DIR LIFE*.COM
+    ### DIR LIFE????.COM
+    ### DIR LIFE*.COM
 
 ## PIP Command
 
@@ -30,7 +30,7 @@
 
 ![Alt text](image-1.png)
 
-* PIP PUN:=FILENAME.TYP
+### PIP PUN:=FILENAME.TYP
 * This would send the file to the physical device attached to the logical dvice PUN.
 
 ## Line Commands
