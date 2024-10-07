@@ -27,6 +27,9 @@
 
 * Jeff and Johan talked about logical units can represent certain physical devices.
 
+
+![Alt text](image-1.png)
+
 * PIP PUN:=FILENAME.TYP
 * This would send the file to the physical device attached to the logical dvice PUN.
 
