@@ -16,3 +16,11 @@
 
 * The output format like the Intel HEX format allows transmission of code between computers and includes error checking through CHECKSUMS!
 
+
+To use ED, go make sure you are in the A> and type **ED FILENAME.TYPE**
+
+Entering the command **I** will let you get into INSERT MODE --> You can type stuff in the Editor
+
+Entering the command **B** will let you go back to to the beginning of the file where you edited
+
+Enter **D** to delete one character
