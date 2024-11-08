@@ -21,6 +21,12 @@ To use ED, go make sure you are in the A> and type **ED FILENAME.TYPE**
 
 Entering the command **I** will let you get into INSERT MODE --> You can type stuff in the Editor
 
+## Enter CTRL + Z to get into Command Mode, Where you can use the commands like print, or beginning, etc!
+
 Entering the command **B** will let you go back to to the beginning of the file where you edited
 
-Enter **D** to delete one character
+Enter **D** to delete one character, Typing in **3D** to delete 3 characters
+
+Also, enter **TAB** to write in different spaces like these: 
+
+![Alt text](image.png)
