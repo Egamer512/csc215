@@ -30,3 +30,7 @@ Enter **D** to delete one character, Typing in **3D** to delete 3 characters
 Also, enter **TAB** to write in different spaces like these: 
 
 ![Alt text](image.png)
+
+Print by entering 0p, and b0p
+
+Save a file by entering **E**
