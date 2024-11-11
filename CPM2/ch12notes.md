@@ -17,3 +17,8 @@
 Here is a quick key on the important Commands:
 
 ![Alt text](image-1.png)
+
+## Debugging:
+
+* To debug, you want to assemble and load the program BUT check for the address consistency 
+* You can also use the *FIND* and *JUMP* to navigate and modify your code
