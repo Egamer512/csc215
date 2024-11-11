@@ -8,7 +8,7 @@
 
 
 ![Alt text](image-2.png)
-* Carriage Return and Line Feed (CCRLF)
+* Carriage Return and Line Feed (CCRLF) (Starts a new line)
     * Outputs CR and LF using the CO subroutine
     * Ends with JUMP CO --> Saves the byte and increases execution speed by directly JUMPING to CO
 
@@ -18,4 +18,17 @@
     * Outputs each of the characters until 00H is reached 
     * Use CALL CO to print each character and increments the pointer
 
+![Alt text](image-4.png)
+* Console Input Message (CIMSG)
+* Basically handles the line input w/ editing
 
+### Debuggin using DDT
+* CP/M thingy for debugging and step-by-step program inspection
+* Commands
+    * GADDR and ADDR - executes the program from one address to another
+    * X - examines the values in registers
+    * Tn - trace the n instructions and displays the values in the registers
+
+* Before using it, remove the disks and from the drives 
+* DDT relocates in the memoery and changes the address in the BDOS 
+ 
