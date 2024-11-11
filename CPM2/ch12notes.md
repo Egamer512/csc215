@@ -8,4 +8,12 @@
 * Register Convetions are communications with external devices which should be handled by the CP/M BDOS!
 * The BDOS utilizes the **Call Vector** to handle I/O operations
 
-* Console Out
+* Console Output - Outputs characters in the accumlator to the Console and Perserves othe registers
+
+* Console Input recieves an ASCII character FROM the console --> Goes into the Accumalator --> Makes an 8th bit using *ANI 7FH* to ensure valud input data
+
+* Register save and restore operations w/ *PUSH* or *POP*
+
+Here is a quick key on the important Commands:
+
+![Alt text](image-1.png)
