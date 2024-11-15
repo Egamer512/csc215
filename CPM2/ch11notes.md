@@ -31,6 +31,6 @@ Also, enter **TAB** to write in different spaces like these:
 
 ![Alt text](image.png)
 
-Print by entering 0p, and b0p
+Print by entering 0p, and b0pe
 
 Save a file by entering **E**ee
