@@ -1,0 +1,22 @@
+SPMSG:   XTHL                ; GET "RETURN ADDRESS" TO HL
+         XRA A               ; CLEAR FLAG AND ACCUMULATOR
+         ADD M               ; GET ONE MESSAGE CHARACTER
+         INX H               ; POINT TO THE NEXT CHARACTER
+         XTHL                ; RESTORE STACK FOR RETURN
+         RZ                  ; RETURN IF DONE
+         CALL CO             ; ELSE DISPLAY CHARACTER
+         JMP SPMSG           ; AND DO ANOTHER
+
+; GET YES OR NO FROM CONSOLE
+GETYN:   CALL SPMSG          ; PROMPT FOR INPUT
+         DB ' (Y/N)?', 0
+         CALL CIMSG          ; GET INPUT LINE
+         CALL CCRLF          ; ECHO CARRIAGE RETURN
+         LDA INBUF+2         ; FIRST CHARACTER ONLY
+         ANI 01011111B       ; CONVERT LOWER TO UPPER
+         CPI 'Y'             ; COMPARE WITH 'Y'
+         RZ                  ; RETURN WITH ZERO
+         CPI 'N'             ; RETURN WITH 'N'
+         JNZ GETYN           ; ELSE REPEAT
+         CPI 0               ; RESET TO 0
+         RET
