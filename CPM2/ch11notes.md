@@ -33,4 +33,4 @@ Also, enter **TAB** to write in different spaces like these:
 
 Print by entering 0p, and b0p
 
-Save a file by entering **E**e
+Save a file by entering **E**ee
