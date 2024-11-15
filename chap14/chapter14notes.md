@@ -6,3 +6,4 @@
 
 * GETYN is like out own subroutine that we made for this chapter - compares yes or no
 
+![Alt text](image.png) <-- My CH14 ASM Code 
