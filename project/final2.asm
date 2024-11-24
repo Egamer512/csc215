@@ -14,6 +14,42 @@ TPA     EQU     100H
 
         ORG     TPA 
 
+START:  LXI     SP,STAK
+START1: CALL    CCRLF
+        LXI     H,SIGNON
+        CALL    COMSG
+START2: LXI     H,MSG1
+        CALL    COMSG
+        CALL    GETNUM
+        MOV     B,A 
+        CALL    CCRLF
+START3: LXI     H,MSG2
+        CALL    COMSG
+        CALL    GETNUM
+        MOV     C,A 
+        CALL    CCRLF
+
+        MOV     A,B
+        SUB     C 
+        CALL DISPLAY_RES
+        RET
+        
+
+SIGNON: DB      'Hello! Welcome to the Subtractor!',CR,LF,0
+MSG1:   DB      'Enter your first number: ',CR,LF,0
+MSG2:   DB      'Enter your second number:',CR,LF,0
+MSG3:   DB      'The difference is: ',CR,LF,0
+MSG4:   DB      'Error: The result is negative',CR,LF,0
+
+DISPLAY_RES:
+        LXI     H,MSG3
+        CALL    COMSG
+        ADD     A,'0'
+        CALL    CO
+        CALL    CCRLF
+        JMP     START
+
+
 ; Console Character Input Routine
 CI:     PUSH    B       ; Save registers
         PUSH    D
@@ -51,6 +87,10 @@ COMSG:  MOV     A,M     ; Get A character
         CALL    CO      ; Else output the character
         INX     H       ; Point to the next character
         JMP     COMSG   ; Repeat
+
+GETNUM: CALL    CI
+        SUI     '0'
+        RET
 
 ; Stack Setup
         DS      64      
