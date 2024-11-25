@@ -36,7 +36,7 @@ START3: LXI     H,MSG2  ; MSG2 prompts for second number
         JMP     START   ; RESTARTS PROGRAM
         
 
-SIGNON: DB      'Number Comparison program',CR,LF,0
+SIGNON: DB      'Number Comparison program (CTRL + Z to Exit)',CR,LF,0
 MSG1:   DB      'Enter the first number (0-9): ',CR,LF,0
 MSG2:   DB      'Enter the second number (0-9): ',CR,LF,0
 MSG3:   DB      'The first number is smaller.', CR, LF, 0
