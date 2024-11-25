@@ -31,15 +31,18 @@ START3: LXI     H,MSG2
 
         MOV     A,B
         SUB     C 
-        CALL DISPLAY_RES
+        CALL    DISPLAY_RES
         RET
         
 
-SIGNON: DB      'Hello! Welcome to the Subtractor!',CR,LF,0
+SIGNON: DB      'Hello! Welcome to the Subtractor! (Press Ctrl + Z to exit)',CR,LF,0
 MSG1:   DB      'Enter your first number: ',CR,LF,0
 MSG2:   DB      'Enter your second number:',CR,LF,0
 MSG3:   DB      'The difference is: ',CR,LF,0
-MSG4:   DB      'Error: The result is negative',CR,LF,0
+
+
+
+
 
 DISPLAY_RES:
         LXI     H,MSG3
