@@ -108,6 +108,8 @@ DONE:
 
 ; GETTING A SINGLE DIGIT NUMBER (ASCII TO NUMBER)
 GETNUM: CALL    CI  
+        CPI     CTRLZ
+        JZ      RBOOT
         SUI     '0' ; Converting from ASCII to number by subtracting 0 which is 48 in decimal
         RET
 
