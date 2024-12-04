@@ -17,6 +17,6 @@ char *argv[];
         }
         sum += num;
     }
-    printf("%d", total);
+    printf("The sum is %d", sum);
     return 0;
 }
