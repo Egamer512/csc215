@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define EOF -1
 
-main(){
+int main(){
     int c, nl, blank, tab;
     nl = 0;
     blank = 0;
@@ -20,5 +20,6 @@ main(){
         printf("Tabs: %d\n", tab);
         printf("Blanks: %d\n", blank);
         
+        return 1;
     }
 }
