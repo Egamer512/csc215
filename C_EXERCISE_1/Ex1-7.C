@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-main(){
-    char curr, prev = '\0';
+int main(){
+    char curr, prev;
     while ((curr=getchar()) != EOF ){
         if (curr == ' ' && prev == ' '){
             continue;
@@ -10,4 +10,5 @@ main(){
         }
         prev = curr;
     }
-}
+    return 1;
+} 
