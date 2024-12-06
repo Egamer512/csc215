@@ -3,6 +3,11 @@
 main(){
     char curr, prev = '\0';
     while ((curr=getchar()) != EOF ){
-        if (curr == ' ' && )
+        if (curr == ' ' && prev == ' '){
+            continue;
+        }else{
+            putchar(curr);
+        }
+        prev = curr;
     }
 }
