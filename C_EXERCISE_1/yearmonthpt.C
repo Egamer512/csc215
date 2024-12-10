@@ -21,3 +21,20 @@ int year, month, day;
     return day;
 
 }
+
+month_day(year, yearday, pmonth, pday)
+int year, yearday, *pmonth, *pday;
+{
+    int leap;
+    int *p;
+    int i;
+    leap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    p = *(days + leap);
+    for (i = 1; yearday > *(p + i); i++){
+        yearday -= *(p + i);
+    }
+
+    *pmonth s= i;
+    *pday = yearday;
+
+}
