@@ -27,3 +27,12 @@ int year, yearday, *pmonth, *pday;
     *pmonth = i;
     *pday = yearday;
 }
+
+main(){
+    int year, month, day, yearday;
+    year = 2024;
+    month = 12;
+    day = 10;
+    yearday = day_of_year(year, month, day);
+    printf("%d", yearday)
+}
