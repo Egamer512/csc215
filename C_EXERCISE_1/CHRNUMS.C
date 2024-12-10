@@ -26,9 +26,11 @@ main(argc, argv)
                 len = 0; 
                 continue;
             }
-            
+            words[len] = c;
+            len++;
         }
     }
-    
+    fclose(infp);
+    return 0;
 
 }
