@@ -18,7 +18,7 @@ main(argc, argv)
         printf("Can't open %s\n", argv[1]);
         exit();
     }else{
-        infp = fopen(argv[1], "r")
+        infp = fopen(argv[1], "r");
         while ((c = fgetc(infp)) != EOF) {
             if (c == "\n"){
                 words[len] = '\0'; /* If it's a new line, it will make that position to nUll*/
@@ -31,6 +31,5 @@ main(argc, argv)
         }
     }
     fclose(infp);
-    return 0;
 
 }
