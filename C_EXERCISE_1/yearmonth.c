@@ -14,3 +14,16 @@ int year, month, day;
     }
     return day;
 }
+
+month_day(year, yearday, pmonth, pday)
+int year, yearday, *pmonth, *pday;
+{
+    int i, leap;
+
+    leap = year%4 == 0 && year%100 != 0 || year%400 == 0;
+    for (i = 1; yearday > days[leap][i]; i++){
+        yearday -= days[leap][i];
+    }
+    *pmonth = i;
+    *pday = yearday;
+}
