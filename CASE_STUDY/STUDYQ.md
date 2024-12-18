@@ -11,3 +11,8 @@ for the operators (e.g., the user types "times" instead of "*"). Where in
 the program would the necessary changes occur?
 * just change the == so that it is the word not the character. But this also requires a loop to ensure everything is correct.
 
+3. Suppose that the calculator is to be converted to use C++ double values rather than integers. Where would changes need to be made?
+
+Just make sure that the inputs would be able to handle the double values instead of just integers. Also make sure that any code that was specified for integers work for doubles.
+
+4. 
