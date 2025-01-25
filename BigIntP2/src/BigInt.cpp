@@ -41,4 +41,16 @@ bool BigInt::operator==(const BigInt& i2) const{
 bool BigInt::operator>(const BigInt& i2) const{
     if(!negative && i2.negative) return true; //positive > negative
     if(negative && !i2.negative) return false; // negative < positive
+    
+    if(digits.size() < i2.digits.size()){
+        return negative ? false : true; // check if there are differences in digit size
+    }
+
+
+    for(int i = 0; i < digits.size(); i++){
+        if (digits[i] > i2.digits[i]){
+            return negative ? false : true; // check for differences when they have same # of digits
+        }
+    }
+    return false; // the two BigInts are equal!
 }
