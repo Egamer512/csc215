@@ -27,9 +27,7 @@ string BigInt::to_string() const
     return (!negative) ? digits : "-" + digits;
 }
 
-BigInt BigInt::operator+(const BigInt& i2) const{
-    if ((*this).digits.size() == i2.digits.size()){
-        string raw_sum = summ_common_len_digits_strs((*this).digits, i2.digits);
-
-    }
+bool BigInt::operator==(const BigInt& i2) const{
+    if (digits.size() != i2.digits.size()) return false; //simple command which returns false when teh size is different
+    
 }
