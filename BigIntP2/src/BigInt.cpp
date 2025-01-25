@@ -57,6 +57,12 @@ bool BigInt::operator>(const BigInt& i2) const{
 
 BigInt BigInt::operator+(const BigInt& b2) const
 {
-    
+    string result = "";
+    int carry = 0;
+    int x = digits.size() -1;
+    int y = b2.digits.size()-1;
+
+    while (x>=0 || y>=0 || carry){}
+
 
 }
