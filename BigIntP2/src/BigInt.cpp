@@ -62,7 +62,10 @@ BigInt BigInt::operator+(const BigInt& b2) const
     int x = digits.size() -1;
     int y = b2.digits.size()-1;
 
-    while (x>=0 || y>=0 || carry){}
+    while (x>=0 || y>=0 || carry){
+        int digit1 = (x >= 0) ? digits[x] - '0' : 0;
+        int digit2 = (y >= 0) ? i2.digits[y] - '0' : 0;
+    }
 
 
 }
