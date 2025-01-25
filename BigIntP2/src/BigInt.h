@@ -15,6 +15,6 @@ class BigInt
     // member functions
     string to_string() const;
 
-    BigInt add(const BigInt &other) const;
-    
+    BigInt operator(const BigInt &other) const;
+
 };

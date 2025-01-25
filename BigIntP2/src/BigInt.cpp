@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "BigInt.h"
+#define to_num(c) (c-'0')
 using namespace std;
 
 BigInt::BigInt()
@@ -29,6 +30,6 @@ string BigInt::to_string() const
 BigInt BigInt::operator+(const BigInt& i2) const{
     if ((*this).digits.size() == i2.digits.size()){
         string raw_sum = summ_common_len_digits_strs((*this).digits, i2.digits);
-        
+
     }
 }
