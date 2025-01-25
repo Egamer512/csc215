@@ -58,5 +58,10 @@ bool BigInt::operator>(const BigInt& i2) const{
 BigInt BigInt::operator+(const BigInt& b2) const
 {
     BigInt b1(digits, negative);
+    int i1, i2, carry = 0;
+    int max_digits = max(b1.digits.length(), b2.digits.length());
+    string s(max_digits + 1, ' ');  // essentially one additional space for the carry in addition
+
     
+
 }
