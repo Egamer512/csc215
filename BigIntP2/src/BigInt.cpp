@@ -64,7 +64,7 @@ BigInt BigInt::operator+(const BigInt& b2) const
 
     while (x>=0 || y>=0 || carry){
         int digit1 = (x >= 0) ? digits[x] - '0' : 0;
-        int digit2 = (y >= 0) ? i2.digits[y] - '0' : 0;
+        int digit2 = (y >= 0) ? b2.digits[y] - '0' : 0;
     }
 
 
