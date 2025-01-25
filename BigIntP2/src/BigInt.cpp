@@ -55,3 +55,8 @@ bool BigInt::operator>(const BigInt& i2) const{
     return false; // the two BigInts are equal!
 }
 
+BigInt BigInt::operator+(const BigInt& b2) const
+{
+    BigInt b1(digits, negative);
+    
+}
