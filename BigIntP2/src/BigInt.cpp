@@ -27,31 +27,34 @@ string BigInt::to_string() const
     return (!negative) ? digits : "-" + digits;
 }
 
-bool BigInt::operator==(const BigInt& i2) const{
-    if (digits.size() != i2.digits.size()) return false; //simple command which returns false when teh size is different
-    if (negative != i2.negative) return false;
+bool BigInt::operator==(const BigInt& b2) const{
+    if (digits.size() != b2.digits.size()) return false; //simple command which returns false when teh size is different
+    if (negative != b2.negative) return false;
     for(int i = 0; i < digits.size(); i++){
-        if(digits[i] != i2.digits[i]){
+        if(digits[i] != b2.digits[i]){
             return false;
         }
     }
     return true;
 }
 
-bool BigInt::operator>(const BigInt& i2) const{
-    if(!negative && i2.negative) return true; //positive > negative
-    if(negative && !i2.negative) return false; // negative < positive
+bool BigInt::operator>(const BigInt& b2) const{
+    if(!negative && b2.negative) return true; //positive > negative
+    if(negative && !b2.negative) return false; // negative < positive
     
-    if(digits.size() < i2.digits.size()){
+  
+    if (digits.size() < b2.digits.size()) {
+        return negative ? true : false;
+    }
+   if(digits.size() > b2.digits.size()){
         return negative ? false : true; // check if there are differences in digit size
     }
 
-
     for(int i = 0; i < digits.size(); i++){
-        if (digits[i] > i2.digits[i]){
+        if (digits[i] > b2.digits[i]){
             return negative ? false : true; // check for differences when they have same # of digits
         }
-    }
+    } 
     return false; // the two BigInts are equal!
 }
 
