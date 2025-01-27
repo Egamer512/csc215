@@ -88,6 +88,20 @@ BigInt BigInt::operator-(const BigInt &b2) const {
     if (*this < b2) return  -(b2 - *this);
 
     
+    string n1 = this->digits;
+    string n2 = b2.digits;
+    string r = "";
+
+    while (n1.size() < n2.size()){
+        n1.insert(n1.begin(), '0');
+    }
+
+    while (n2.size() < n1.size()){
+        n2.insert(n2.begin(), '0');
+    }
+
+    
+
 
 }
 
