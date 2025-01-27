@@ -81,7 +81,7 @@ TEST_CASE("Test can add BigInts") {
 
 TEST_CASE(" Minus"){
     BigInt b1("52");
-    BigInt b2 = -b2;
+    BigInt b2 = -b1;
     CHECK(b2.to_string() == "-52");
     CHECK((-b2).to_string() == "0");
 }
