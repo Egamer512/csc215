@@ -15,14 +15,16 @@ class BigInt
     // member functions
     string to_string() const;
 
+    //comparisons 
     bool operator==(const BigInt&) const;
     bool operator>(const BigInt&) const;
     bool operator!=(const BigInt&) const;
     bool operator<=(const BigInt&) const;
     bool operator<(const BigInt&) const;
     bool operator>=(const BigInt&) const;
-    // Add the other comparison operators later
+    
 
+    //operations
     BigInt operator+(const BigInt& b2) const;
     BigInt operator-() const;
     BigInt operator-(const BigInt &b2) const ;

@@ -85,3 +85,12 @@ TEST_CASE(" Minus"){
     CHECK(b2.to_string() == "-52");
     CHECK((-b2).to_string() == "52");
 }
+
+TEST_CASE("SUBTRACTION"){
+    BigInt b1("1600");
+    BigInt b2("1500");
+    BigInt b3("654321");
+    BigInt b4("65");
+    CHECK((b1-b2).to_string() == "100");
+    CHECK((b3-b4).to_string() == "654256");
+}
