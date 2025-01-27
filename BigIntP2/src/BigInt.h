@@ -24,5 +24,6 @@ class BigInt
     // Add the other comparison operators later
 
     BigInt operator+(const BigInt& b2) const;
+    BigInt operator-() const;
 
 };

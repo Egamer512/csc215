@@ -79,7 +79,6 @@ BigInt BigInt::operator+(const BigInt& b2) const
 
     return BigInt(r);
 
-   
 }
 
 bool BigInt::operator!=(const BigInt& b2) const
