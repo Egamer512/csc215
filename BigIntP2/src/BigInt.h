@@ -23,6 +23,6 @@ class BigInt
     bool operator>=(const BigInt&) const;
     // Add the other comparison operators later
 
-    BigInt BigInt::operator+(const BigInt& b2) const;
+    BigInt operator+(const BigInt& b2) const;
 
 };

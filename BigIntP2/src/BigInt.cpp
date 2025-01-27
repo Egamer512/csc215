@@ -55,17 +55,39 @@ bool BigInt::operator>(const BigInt& i2) const{
     return false; // the two BigInts are equal!
 }
 
+
+
 BigInt BigInt::operator+(const BigInt& b2) const
 {
-    string result = "";
-    int carry = 0;
-    int x = digits.size() -1;
+    string r = "";
+    int c  = 0;
+    
+    int x = digits.size()-1;
     int y = b2.digits.size()-1;
 
-    while (x>=0 || y>=0 || carry){
+    while(x>= 0 || y>=0 || c){
         int digit1 = (x >= 0) ? digits[x] - '0' : 0;
         int digit2 = (y >= 0) ? b2.digits[y] - '0' : 0;
+        
+        int sum = digit1 + digit2 + c;
+        r.insert(r.begin(), (sum % 10) + '0');
+        c = sum / 10;
+        
+        x--;
+        y--;
     }
 
+    return BigInt(r);
 
+   
+}
+
+bool BigInt::operator!=(const BigInt& b2) const
+{
+    return !(this->operator==(b2));
+}
+
+bool BigInt::operator<=(const BigInt& b2) const
+{
+    return !(this->operator>(b2));
 }
