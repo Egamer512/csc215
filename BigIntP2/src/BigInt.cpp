@@ -100,8 +100,23 @@ BigInt BigInt::operator-(const BigInt &b2) const {
         n2.insert(n2.begin(), '0');
     }
 
-    
+    int c = 0;
+    for (int i = n1.size() -1; i >= 0; i--){
+        int d = (n1[i] - '0') - (n2[i] - '0') - c;
+        if (d < 0){
+            d += 10;
+            c = 1; // setting the carry to 1 when the subtraction is too large
+        }else{
+            c = 0;
+        }
+        r.insert(r.begin(), d + '0'); //finalizingi the result before loop
 
+    }
+
+    while(r.size() > 1 && r.front() == '0'){
+        r.erase(r.begin());
+    }
+    return BigInt(r);
 
 }
 
