@@ -81,6 +81,12 @@ BigInt BigInt::operator+(const BigInt& b2) const
 
 }
 
+BigInt BigInt::operator-(const BigInt &b2) const {
+    if (this->negative && !b2.negative) return -((-*this) + b2);
+    if(!this->negative && b2.negative) return *this + (-b2);
+    
+}
+
 BigInt BigInt::operator-() const{
     BigInt result = *this;
     result.negative =!negative;
