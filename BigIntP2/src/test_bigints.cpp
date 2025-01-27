@@ -78,3 +78,10 @@ TEST_CASE("Test can add BigInts") {
     CHECK((i1 + i2).to_string() == "444");
     CHECK((i1 + i3).to_string() == "43333");
 }
+
+TEST_CASE(" Minus"){
+    BigInt b1("52");
+    BigInt b2 = -b2;
+    CHECK(b2.to_string() == "-52");
+    CHECK((-b2).to_string() == "0");
+}

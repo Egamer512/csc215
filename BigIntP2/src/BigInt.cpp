@@ -81,6 +81,23 @@ BigInt BigInt::operator+(const BigInt& b2) const
 
 }
 
+bool BigInt::operator<(const BigInt& b2) const{
+    // doing simple comparison wehther if each other number is positive or negative
+    if(!negative && b2.negative) return false;
+    if(negative &&!b2.negative) return true;
+    // this is testing when the two numbers have the same size, so we're actually looking for differences in the digits
+    if(digits.size() > b2.digits.size()) return negative ? true : false;
+    if(digits.size() < b2.digits.size()) return negative ? false : true;
+
+    // this is the final case, so when the numbers have the same number of digits (most complicated)
+    for (int i = 0; i < digits.size(); i++){
+        if (digits[i] > b2.digits[i]) return negative ? true : false;
+    }
+
+    // final case, the two numbers of equak
+    return false;
+}
+
 BigInt BigInt::operator-(const BigInt &b2) const {
     if (this->negative && !b2.negative) return -((-*this) + b2);
     if(!this->negative && b2.negative) return *this + (-b2);
