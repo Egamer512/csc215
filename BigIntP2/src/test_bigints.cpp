@@ -43,7 +43,7 @@ TEST_CASE("Test can compare BigInts for inequality") {
     CHECK((i6 > i4) == true);
 }
 
-/* TEST_CASE("Test can compare BigInts with !=, <=, <, and <=") {
+TEST_CASE("Test can compare BigInts with !=, <=, <, and <=") {
     BigInt i1("12345");
     BigInt i2("54321");
     BigInt i3("123456");
@@ -54,7 +54,7 @@ TEST_CASE("Test can compare BigInts for inequality") {
     CHECK((i2 <= i5) == true);
     CHECK((i2 < i1) == false);
     CHECK((i6 >= i4) == true);
-} */
+} 
 
 /* TEST_CASE("Test helper function to add BigInts with same number of digits") {
     BigInt i1("123");

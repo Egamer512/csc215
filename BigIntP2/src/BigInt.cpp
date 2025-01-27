@@ -155,3 +155,8 @@ bool BigInt::operator<=(const BigInt& b2) const
 {
     return !(this->operator>(b2));
 }
+
+bool BigInt::operator>=(const BigInt& b2) const
+{
+    return !(this->operator<(b2));
+}
