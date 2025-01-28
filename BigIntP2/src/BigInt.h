@@ -28,5 +28,6 @@ class BigInt
     BigInt operator+(const BigInt& b2) const;
     BigInt operator-() const;
     BigInt operator-(const BigInt &b2) const ;
+    BigInt operator*(const BigInt &b2) const;
 
 };
