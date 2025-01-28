@@ -156,7 +156,10 @@ BigInt BigInt::operator*(const BigInt& b2) const{
             c = prod/10;
             r[i+j+1] = (prod%10) + '0';
         }
+        r[i] += c;
     }
+
+    size_t starting_position = r.find_first_not_of('0');
 }
 
 bool BigInt::operator!=(const BigInt& b2) const
