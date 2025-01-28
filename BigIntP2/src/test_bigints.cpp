@@ -15,6 +15,10 @@ TEST_CASE("Test can create and render BigInts") {
     CHECK(bi4.to_string() == "123456789012345678901234567890");
     BigInt bi5("-923456789012345678901234567890");
     CHECK(bi5.to_string() == "-923456789012345678901234567890");
+    BigInt bi6("987654321098765432109876543210");
+    CHECK(bi6.to_string() == "987654321098765432109876543210");
+    BigInt bi7("-987654321098765432109876543210");
+    CHECK(bi7.to_string() == "-987654321098765432109876543210");
 }
 
 TEST_CASE("Test can compare BigInts for equality") {
@@ -24,10 +28,15 @@ TEST_CASE("Test can compare BigInts for equality") {
     BigInt i4("-654321");
     BigInt i5("54321");
     BigInt i6("-54321");
+    BigInt i7("987654321");
+    BigInt i8("987654321");
+
     CHECK((i2 == i5) == true);
     CHECK((i1 == i2) == false);
     CHECK((i1 == i3) == false);
     CHECK((i2 == i6) == false);
+    CHECK((i7 == i8) == true);
+    CHECK((i4 == i6) == false);
 }
 
 TEST_CASE("Test can compare BigInts for inequality") {
@@ -37,10 +46,15 @@ TEST_CASE("Test can compare BigInts for inequality") {
     BigInt i4("-654321");
     BigInt i5("54321");
     BigInt i6("-54321");
+    BigInt i7("7654321");
+    BigInt i8("-7654321");
+
     CHECK((i2 > i5) == false);
     CHECK((i2 > i1) == true);
     CHECK((i4 > i1) == false);
     CHECK((i6 > i4) == true);
+    CHECK((i3 > i7) == false);
+    CHECK((i8 > i4) == false);
 }
 
 TEST_CASE("Test can compare BigInts with !=, <=, <, and <=") {
@@ -50,12 +64,16 @@ TEST_CASE("Test can compare BigInts with !=, <=, <, and <=") {
     BigInt i4("-654321");
     BigInt i5("54321");
     BigInt i6("-54321");
+    BigInt i7("987654");
+    BigInt i8("-987654");
+
     CHECK((i4 != i1) == true);
     CHECK((i2 <= i5) == true);
     CHECK((i2 < i1) == false);
     CHECK((i6 >= i4) == true);
-} 
-
+    CHECK((i7 != i8) == true);
+    CHECK((i8 <= i4) == true);
+}
 
 TEST_CASE("Test can add BigInts") {
     BigInt i1("123");
@@ -63,33 +81,51 @@ TEST_CASE("Test can add BigInts") {
     BigInt i3("43210");
     BigInt i4("9999");
     BigInt i5("1");
+    BigInt i6("-9999");
+    BigInt i7("765432");
+    BigInt i8("87654321");
+
     CHECK((i1 + i2).to_string() == "444");
     CHECK((i1 + i3).to_string() == "43333");
+    CHECK((i4 + i5).to_string() == "10000");
+    CHECK((i7 + i8).to_string() == "88419753");
 }
 
-TEST_CASE(" Minus"){
+TEST_CASE("NEGATION TESTING") {
     BigInt b1("52");
     BigInt b2 = -b1;
+    BigInt b3("765");
+    BigInt b4("-765");
+
     CHECK(b2.to_string() == "-52");
     CHECK((-b2).to_string() == "52");
+    CHECK((-b3).to_string() == "-765");
+    CHECK((-b4).to_string() == "765");
 }
 
-TEST_CASE("SUBTRACTION"){
+TEST_CASE("SUBTRACTION TESTING") {
     BigInt b1("1600");
     BigInt b2("1500");
     BigInt b3("654321");
     BigInt b4("65");
-    CHECK((b1-b2).to_string() == "100");
-    CHECK((b3-b4).to_string() == "654256");
+    BigInt b5("9999");
+    BigInt b6("8888");
+
+    CHECK((b1 - b2).to_string() == "100");
+    CHECK((b3 - b4).to_string() == "654256");
+    CHECK((b5 - b6).to_string() == "1111");
 }
 
-TEST_CASE("MULTIPLICATION TESTING"){
+TEST_CASE("MULTIPLICATION TESTING") {
     BigInt b1("12");
     BigInt b2("34");
     BigInt b3("-56");
+    BigInt b4("999");
+    BigInt b5("-999");
 
     CHECK((b1 * b2).to_string() == "408");
     CHECK((b2 * b3).to_string() == "-1904");
     CHECK((b1 * b3).to_string() == "-672");
-
+    CHECK((b4 * b5).to_string() == "-998001");
+    CHECK((b4 * b4).to_string() == "998001");
 }
