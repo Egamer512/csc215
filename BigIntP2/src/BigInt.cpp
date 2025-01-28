@@ -160,6 +160,9 @@ BigInt BigInt::operator*(const BigInt& b2) const{
     }
 
     size_t starting_position = r.find_first_not_of('0');
+    if (starting_position != string::npos) r = r.substr(starting_position);
+    else r = "0";
+     
 }
 
 bool BigInt::operator!=(const BigInt& b2) const
