@@ -147,6 +147,7 @@ BigInt BigInt::operator-() const{
 }
 
 BigInt BigInt::operator*(const BigInt& b2) const{
+
     bool neg_result = this->negative != b2.negative;
     string r(this->digits.size() + b2.digits.size(), '0');
     for (int i =this->digits.size() -1; i>=0; i--){

@@ -82,3 +82,14 @@ TEST_CASE("SUBTRACTION"){
     CHECK((b1-b2).to_string() == "100");
     CHECK((b3-b4).to_string() == "654256");
 }
+
+TEST_CASE("MULTIPLICATION TESTING"){
+    BigInt b1("12");
+    BigInt b2("34");
+    BigInt b3("-56");
+
+    CHECK((b1 * b2).to_string() == "408");
+    CHECK((b2 * b3).to_string() == "-1904");
+    CHECK((b1 * b3).to_string() == "-672");
+
+}
